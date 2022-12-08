@@ -11,7 +11,7 @@ class ThemeManagerBloc extends Bloc<ThemeManagerEvent, ThemeManagerState> {
 
     on<ToggleTheme>(
       ((event, emit) {
-        ThemeMode themeMode = event.isDark ? ThemeMode.light : ThemeMode.dark;
+        ThemeMode themeMode = event.isDark ? ThemeMode.dark : ThemeMode.light;
 
         emit(CurrentTheme(themeMode: themeMode));
       }),

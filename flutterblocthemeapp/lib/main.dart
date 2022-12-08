@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeManagerBloc(),
+      create: (context) =>
+          ThemeManagerBloc()..add(const ToggleTheme(isDark: false)),
       child: BlocBuilder<ThemeManagerBloc, ThemeManagerState>(
         builder: (context, state) {
           ThemeMode themeMode = ThemeMode.light;

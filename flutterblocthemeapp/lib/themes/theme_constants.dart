@@ -49,9 +49,9 @@ ThemeData darkTheme = ThemeData(
           borderRadius: BorderRadius.circular(20),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all<Color?>(Colors.white),
-      foregroundColor: MaterialStateProperty.all<Color?>(Colors.black),
-      overlayColor: MaterialStateProperty.all<Color?>(
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+      overlayColor: MaterialStateProperty.all<Color>(
         greyColor.withOpacity(0.4),
       ),
     ),

@@ -22,27 +22,19 @@ class _HomeScreenState extends State<HomeScreen> {
             if (state is CurrentTheme) {
               bool switchValue =
                   state.themeMode == ThemeMode.light ? false : true;
+
               return Switch(
                 value: switchValue,
                 onChanged: (newValue) {
                   BlocProvider.of<ThemeManagerBloc>(context).add(
                     ToggleTheme(
-                      isDark: switchValue,
+                      isDark: !switchValue,
                     ),
                   );
                 },
               );
             }
-            return Switch(
-              value: false,
-              onChanged: (newValue) {
-                BlocProvider.of<ThemeManagerBloc>(context).add(
-                  const ToggleTheme(
-                    isDark: true,
-                  ),
-                );
-              },
-            );
+            return const SizedBox.shrink();
           })
         ],
       ),
