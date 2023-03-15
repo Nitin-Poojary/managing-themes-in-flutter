@@ -19,8 +19,12 @@ void main() {
       blocTest(
         'Given theme manager bloc when toggle event is added then toggle current theme and emit toggled state',
         build: () => ThemeManagerBloc(),
-        act: (themeBloc) => themeBloc.add(const ToggleTheme(isDark: true)),
+        act: (themeBloc) {
+          themeBloc.add(const ToggleTheme(isDark: false));
+          themeBloc.add(const ToggleTheme(isDark: true));
+        },
         expect: () => [
+          const CurrentTheme(themeMode: ThemeMode.light),
           const CurrentTheme(themeMode: ThemeMode.dark),
         ],
       );

@@ -15,6 +15,7 @@ class ThemeManager extends StateNotifier<ThemeMode> {
   get getThememode => themeMode;
 
   void toggleTheme(bool isDark) {
-    state = isDark ? ThemeMode.dark : ThemeMode.light;
+    themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+    state = themeMode;
   }
 }
