@@ -10,7 +10,7 @@ void main() {
       blocTest<ThemeManagerBloc, ThemeManagerState>(
         'Given theme manager bloc when app is started then bloc should emit light theme',
         build: () => ThemeManagerBloc(),
-        act: (bloc) => bloc.add(const ToggleTheme(isDark: false)),
+        act: (themeBloc) => themeBloc.add(const ToggleTheme(isDark: false)),
         expect: () => const <ThemeManagerState>[
           CurrentTheme(themeMode: ThemeMode.light),
         ],
